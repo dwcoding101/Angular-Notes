@@ -20,4 +20,7 @@ or just
 ng g d directiveName
 ```
 
-while will generate [this file](directive-name.directive.ts)
+which will generate [this file](directive-name.directive.ts)
+
+##Points of note 
+* ## The import
