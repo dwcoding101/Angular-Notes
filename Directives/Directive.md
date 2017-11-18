@@ -11,5 +11,5 @@ There are two main type of directive.
 to create a directive use the angular cli comand 
 
 ```terminal
-ng generate directive 
+ng generate directive *directive name*
 ```
