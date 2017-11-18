@@ -6,3 +6,5 @@ There are two main type of directive.
 * ## Structural Directives
   
   Structural directives look like normal HTML attributes but with an a leading *. They will also effect a whole area of a DOM.
+
+## Attribute Directives
