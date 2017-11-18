@@ -22,5 +22,5 @@ ng g d directiveName
 
 which will generate [this file](directive-name.directive.ts)
 
-##Points of note 
+## Points of note 
 * ## The import
