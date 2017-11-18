@@ -8,3 +8,8 @@ There are two main type of directive.
   Structural directives look like normal HTML attributes but with an a leading *. They will also effect a whole area of a DOM.
 
 ## Attribute Directives
+to create a directive use the angular cli comand 
+
+```terminal
+ng generate directive 
+```
