@@ -13,3 +13,9 @@ to create a directive use the angular cli comand
 ```terminal
 ng generate directive directiveName
 ```
+
+or just 
+
+```terminal
+ng g d directiveName
+```
