@@ -24,3 +24,18 @@ which will generate [this file](directive-name.directive.ts)
 
 ## Points of note 
 * ### The import
+  
+  The import of the directive decorator
+
+  ```typescript
+  import { Directive } from '@angular/core';
+  ```
+* ### The Decoractor
+
+  the decorator infront of the class and long with the attribute selector as a selector.
+  ```typescript
+  @Directive({
+  selector: '[appDirectiveName]'
+  })
+  export class DirectiveNameDirective {
+  ```
