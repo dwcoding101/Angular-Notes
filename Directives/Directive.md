@@ -32,7 +32,7 @@ which will generate [this file](directive-name.directive.ts)
   ```
 * ### The Decoractor
 
-  The decorator infront of the class and long with the attribute selector as a selector.
+  The decorator infront of the class also the attribute selector [] as a selector.
   ```typescript
   @Directive({
     selector: '[appDirectiveName]'
