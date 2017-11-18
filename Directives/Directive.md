@@ -35,7 +35,7 @@ which will generate [this file](directive-name.directive.ts)
   the decorator infront of the class and long with the attribute selector as a selector.
   ```typescript
   @Directive({
-  selector: '[appDirectiveName]'
+    selector: '[appDirectiveName]'
   })
   export class DirectiveNameDirective {
   ```
