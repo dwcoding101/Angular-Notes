@@ -19,3 +19,5 @@ or just
 ```terminal
 ng g d directiveName
 ```
+
+while will generate [this file](directive-name.directive.ts)
