@@ -43,41 +43,41 @@ which will generate [this file](directive-name.directive.ts)
  the first method to effect the element that a directive is attached to
  is to use dependancy injection. This is achieved by injecting the Element reference into the
  constructor. This is done by the follwing command
- ```typescript
-   import { ElementRef } from '@angular/core';
- ```
- ```typescript
-   constructor(private elementRef: ElementRef){}
- ```
- then within the ngOnInit function you could use elementRef to 
- ```typescript
-   this.elementRef.nativeElement.style.backgroundColor = 'green'
- ```
+```typescript
+import { ElementRef } from '@angular/core';
+```
+```typescript
+constructor(private elementRef: ElementRef){}
+```
+then within the ngOnInit function you could use elementRef to 
+```typescript
+this.elementRef.nativeElement.style.backgroundColor = 'green'
+```
 
  however this is poor coding practice, it should have used another depency injected property namely
  renderer2. which can then be used to effect the atrached element
- ```typescript
-   import { ElementRef, Renderer2 } from '@angular/core';
- ```
-  ```typescript
-   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
- ```
-  ```typescript
-   this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
- ```
+```typescript
+import { ElementRef, Renderer2 } from '@angular/core';
+```
+```typescript
+constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
+```
+```typescript
+this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
+```
  Renderer2 has many functions that can be used to safely change the attached hmtl element information about the Renderer2 class can be found [here](https://angular.io/api/core/Renderer2).
 
  ## Host listener
   Another useful way to interact with the host element is to use an host listener decorator. This decorator is used to listern for any event on the attahed element, including custom events implemented in your own angular code. Just add the decorator to a function in the directive class. as shown in the following code.
 
- ```typescript
-    import { HostListener } from '@angular/core';
- ```
+```typescript
+import { HostListener } from '@angular/core';
+```
 
- ```typescript
-     @HostListener('mouseenter') mouseOver(eventData: Event) {
-     }
- ```
+```typescript
+@HostListener('mouseenter') mouseOver(eventData: Event) {
+}
+```
   the function is run every time the event is fired.
 
 ## Host binding
@@ -108,4 +108,15 @@ this would allow you to add a property to the host element as so
 
 ```html
 <host directiveName [defaultColor]="'red'"></host>
+```
+
+you can also attach to the directive directly using the @Input Alias.
+
+```typescript
+@Input('directiveName') defaultColor: string = 'red';
+```
+
+
+```html
+<host [directiveName]="'red'"></host>
 ```
