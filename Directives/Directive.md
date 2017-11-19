@@ -83,14 +83,13 @@ which will generate [this file](directive-name.directive.ts)
 ## Host binding
   Another useful way to interact with the host element is to use an host binder decorator. This decorator bindings a property of the Host to the directive. It is attachived by using the following code.
 
-  ```typescript
-    import { HostBinding } from '@angular/core';
- ```
+```typescript
+import { HostBinding } from '@angular/core';
+```
 
- ```typescript
-      @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
-     }
- ```
+```typescript
+@HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
+```
   this decorator allows you to bind directly any of the hosts properties. Include custom proteries that you may have created in angular.
 
 ## Binding to Directive properties 
@@ -101,13 +100,12 @@ import { Input } from '@angular/core';
 }
  ```
 
- ```typescript
-      @Input() defaultColor: string = 'red';
-     }
- ```
+```typescript
+@Input() defaultColor: string = 'red';
+```
 
- this would allow you to add a property to the host element as so
+this would allow you to add a property to the host element as so
 
- ```html
-      <host directiveName [defaultColor]="'red'"></host>
- ```
+```html
+<host directiveName [defaultColor]="'red'"></host>
+```
