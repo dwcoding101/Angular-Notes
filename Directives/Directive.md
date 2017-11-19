@@ -160,7 +160,7 @@ export class UnlessDirective {
   constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) { }
 }
 ```
-this uses depency injectint instances of TemplateRef and ViewContainerRef to gain access 
+this uses depency inject into  instances of TemplateRef and ViewContainerRef to gain access 
 to the template from within the directive. Then use the ViewContainRef to write to the 
 Dom in the correct position.
 
