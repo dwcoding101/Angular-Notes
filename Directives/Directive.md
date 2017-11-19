@@ -91,5 +91,5 @@ which will generate [this file](directive-name.directive.ts)
       @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
      }
  ```
-  is decorator allows you to bind directly any of the hosts properties.
+  this decorator allows you to bind directly any of the hosts properties.
 
