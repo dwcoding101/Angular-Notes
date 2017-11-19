@@ -110,5 +110,4 @@ Using an @Input decorator you can add custom properties to the Host element. The
 
  ```html
       <host directiveName [defaultColor]="'red'"></host>
-     }
  ```
