@@ -40,6 +40,22 @@ which will generate [this file](directive-name.directive.ts)
   export class DirectiveNameDirective {
   ```
 ## Ways to effect the element that the directive is atached to.
+ the first method to effect the element that a directive is attached to
+ is to use dependancy injection. This is achieved by injecting the Element reference into the
+ constructor. This is done by the follwing command
+ ```typescript
+   constructor(private elementRef: ElementRef){}
+ ```
+ then within the ngOnInit function you could use 
+ ```typescript
+   this.element.nativeElement.style.backgroundColor = 'green'
+ ```
+
+ however this is poor coding practice it should have used another depency injected property numberly
+ render2. as shown in the following code.
+  ```typescript
+   this.element.nativeElement.style.backgroundColor = 'green'
+ ```
 
 @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
 
