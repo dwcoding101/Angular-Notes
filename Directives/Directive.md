@@ -120,3 +120,26 @@ you can also attach to the directive directly using the @Input Alias.
 ```html
 <host [directiveName]="'red'"></host>
 ```
+
+
+# Structural Directives
+
+structural directives effect the whole area of the host element. The are denoted by a star * in front of the directive name.
+To understand how a structural directive works you have to have a look what a built in stuctrual directive does.
+
+ ```html
+<host *ngIf >
+  <p> Test Directive </p>
+</host>
+```
+is the equivilent of 
+ ```html
+<ng-template [ngif]="ture" >
+  <host>
+    <p> Test Directive</p>
+  </host>
+</ng-template>
+```
+
+Knowing this we can write are own structural directives with
+
