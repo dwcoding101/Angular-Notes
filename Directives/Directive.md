@@ -68,7 +68,7 @@ which will generate [this file](directive-name.directive.ts)
  Renderer2 has many functions that can be used to safely change the attached hmtl element information about the Renderer2 class can be found [here](https://angular.io/api/core/Renderer2).
 
  ## Event listener
-  Another useful way to interact with the attahed element is to use an host listener decorator. This decorator is used to listern for any event on the attahed element, including custom events implemented in your own angular code. to use an host listener use the following code.
+  Another useful way to interact with the attached element is to use an host listener decorator. This decorator is used to listern for any event on the attahed element, including custom events implemented in your own angular code. Just at the decorator to a function int the directive class. as shown in the following code.
 
  ```typescript
     import { HostListener } from '@angular/core';
