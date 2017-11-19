@@ -65,8 +65,19 @@ which will generate [this file](directive-name.directive.ts)
   ```typescript
    this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
  ```
- Renderer2 has many functions that can be used to safely change the attached hmtl element information about the Renderer2 class can be found [here](https://angular.io/api/core/Renderer2)
+ Renderer2 has many functions that can be used to safely change the attached hmtl element information about the Renderer2 class can be found [here](https://angular.io/api/core/Renderer2).
 
+ ## Event listener
+  Another useful way to interact with the attahed element is to use an host listener decorator. This decorator is used to listern for any event on the attahed element, including custom events implemented in your own angular code. to use an host listener use the following code.
+
+ ```typescript
+    import { HostListener } from '@angular/core';
+ ```
+
+ ```typescript
+     @HostListener('mouseenter') mouseOver(eventData: Event) {
+     }
+ ```
 
 @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
 
