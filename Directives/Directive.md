@@ -62,7 +62,12 @@ which will generate [this file](directive-name.directive.ts)
   ```typescript
    constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
  ```
+  ```typescript
+   this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
+ ```
+ Renderer2 has many functions that can be used to safely change the attached hmtl element
 
+ 
 @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
