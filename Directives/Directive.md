@@ -97,8 +97,8 @@ which will generate [this file](directive-name.directive.ts)
 Using an @Input decorator you can add custom properties to the Host element. These properties can be set in the Host element and passed to the directive. Here is the code.
 
 ```typescript
-      import { Input } from '@angular/core';
-     }
+import { Input } from '@angular/core';
+}
  ```
 
  ```typescript
