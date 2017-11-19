@@ -65,9 +65,9 @@ which will generate [this file](directive-name.directive.ts)
   ```typescript
    this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
  ```
- Renderer2 has many functions that can be used to safely change the attached hmtl element
+ Renderer2 has many functions that can be used to safely change the attached hmtl element information about the Renderer2 class can be found [here](https://angular.io/api/core/Renderer2)
 
- 
+
 @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
