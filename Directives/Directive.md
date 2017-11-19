@@ -67,7 +67,7 @@ which will generate [this file](directive-name.directive.ts)
  ```
  Renderer2 has many functions that can be used to safely change the attached hmtl element information about the Renderer2 class can be found [here](https://angular.io/api/core/Renderer2).
 
- ## Event listener
+ ## Host listener
   Another useful way to interact with the attached element is to use an host listener decorator. This decorator is used to listern for any event on the attahed element, including custom events implemented in your own angular code. Just add the decorator to a function in the directive class. as shown in the following code.
 
  ```typescript
@@ -80,20 +80,16 @@ which will generate [this file](directive-name.directive.ts)
  ```
   the function is run every time the event is fired.
 
-@HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
+## Host binding
+  Another useful way to interact with the attached element is to use an host binder decorator. This decorator bindings a property of the Host to the derective. It is attachived by using the following code.
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
+  ```typescript
+    import { HostBinding } from '@angular/core';
+ ```
 
-  ngOnInit() {
-    // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
-  }
+ ```typescript
+      @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
+     }
+ ```
+  is decorator allows you to bind directly any of the hosts properties.
 
-  @HostListener('mouseenter') mouseOver(eventData: Event) {
-    //this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
-    this.backgroundColor = 'blue';
-  }
-
-  @HostListener('mouseleave') mouseLeave(eventData: Event) {
-    // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');
-    this.backgroundColor = 'transparent';
-  }
