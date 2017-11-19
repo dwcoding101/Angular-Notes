@@ -56,6 +56,9 @@ which will generate [this file](directive-name.directive.ts)
 
  however this is poor coding practice, it should have used another depency injected property namely
  renderer2. which can then be used to effect the atrached element
+ ```typescript
+   import { ElementRef, Renderer2 } from '@angular/core';
+ ```
   ```typescript
    constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
  ```
