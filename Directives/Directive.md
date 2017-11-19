@@ -81,7 +81,7 @@ which will generate [this file](directive-name.directive.ts)
   the function is run every time the event is fired.
 
 ## Host binding
-  Another useful way to interact with the attached element is to use an host binder decorator. This decorator bindings a property of the Host to the derective. It is attachived by using the following code.
+  Another useful way to interact with the host element is to use an host binder decorator. This decorator bindings a property of the Host to the directive. It is attachived by using the following code.
 
   ```typescript
     import { HostBinding } from '@angular/core';
