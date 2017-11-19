@@ -78,6 +78,7 @@ which will generate [this file](directive-name.directive.ts)
      @HostListener('mouseenter') mouseOver(eventData: Event) {
      }
  ```
+  the function is run every time the event is fired.
 
 @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
 
