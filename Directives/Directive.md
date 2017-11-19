@@ -94,7 +94,7 @@ which will generate [this file](directive-name.directive.ts)
   this decorator allows you to bind directly any of the hosts properties. Include custom proteries that you may have created in angular.
 
 ## Binding to Directive properties 
-Using an @Input decorator you can add custom properties to the Host element. These properties can ben set in the Host element and passed to the directive. Here is the code.
+Using an @Input decorator you can add custom properties to the Host element. These properties can be set in the Host element and passed to the directive. Here is the code.
 
 ```typescript
       import { Input } from '@angular/core';
