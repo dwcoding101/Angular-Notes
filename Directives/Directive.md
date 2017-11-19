@@ -46,20 +46,20 @@ which will generate [this file](directive-name.directive.ts)
  ```typescript
    constructor(private elementRef: ElementRef){}
  ```
- then within the ngOnInit function you could use 
+ then within the ngOnInit function you could use elementRef to 
  ```typescript
-   this.element.nativeElement.style.backgroundColor = 'green'
+   this.elementRef.nativeElement.style.backgroundColor = 'green'
  ```
 
- however this is poor coding practice it should have used another depency injected property numberly
- render2. as shown in the following code.
+ however this is poor coding practice, it should have used another depency injected property namely
+ render2. which can then be used to effect the atrached element
   ```typescript
-   this.element.nativeElement.style.backgroundColor = 'green'
+   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
  ```
 
 @HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit() {
     // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
