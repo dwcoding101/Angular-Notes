@@ -44,6 +44,9 @@ which will generate [this file](directive-name.directive.ts)
  is to use dependancy injection. This is achieved by injecting the Element reference into the
  constructor. This is done by the follwing command
  ```typescript
+   import { ElementRef } from '@angular/core';
+ ```
+ ```typescript
    constructor(private elementRef: ElementRef){}
  ```
  then within the ngOnInit function you could use elementRef to 
@@ -52,7 +55,7 @@ which will generate [this file](directive-name.directive.ts)
  ```
 
  however this is poor coding practice, it should have used another depency injected property namely
- render2. which can then be used to effect the atrached element
+ renderer2. which can then be used to effect the atrached element
   ```typescript
    constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
  ```
