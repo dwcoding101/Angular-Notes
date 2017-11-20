@@ -63,6 +63,7 @@ and it into the decorator
   providers: [NamedServiceService]
 })
 ```
+## Hyarchical Injector
 Every time that a provider class appears in the decorator a new instance of the serves is created.
 Once the new service has ben created it a be accessed by child decents of the component. So depending on 
 whether you need one or many instance of the same service converns the placement of the provider call. 
