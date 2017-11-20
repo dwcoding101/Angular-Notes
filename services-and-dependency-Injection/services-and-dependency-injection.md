@@ -35,27 +35,20 @@ export class NamedServiceService {
  To use the service you need to inject it into the code where you wish to use it. this is done though the constructor and the use of the provider in the Class decorator. like so.
 
  ```typescript
- import { Component, Input} from '@angular/core';
+ import { Component } from '@angular/core';
 
-import { LoggingService } from '../logging.service';
-import { AccountsService } from '../accounts.service';
+import { NamedServiceService } from '../named-service.service';
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css'],
-  providers: [LoggingService, AccountsService]
+  selector: 'app-component',
+  providers: [NamedServiceService]
 })
-export class AccountComponent {
-  @Input() account: {name: string, status: string};
-  @Input() id: number;
+export class Component {
  
-  constructor(private loggingService: LoggingService,
-              private accountsService: AccountsService){}
+  constructor(private namedServiceService: NamedServiceService){}
 
   onSetTo(status: string) {
-    this.accountsService.updateStatus(this.id, status);
-    this.loggingService.logStatusChange(status);
+    this.namedServiceService.logStatus('hote');
   }
 }
 
