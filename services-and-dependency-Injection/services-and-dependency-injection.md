@@ -89,4 +89,4 @@ export class NamedServiceService {
     }
 }
 ```
-also remember to at the new Service to the app.module.ts  @ngModule({provider})
+also remember to at the new Service to the app.module.ts  @ngModule({provider}) other wise the service will no be injected.
