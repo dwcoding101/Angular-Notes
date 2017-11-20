@@ -51,10 +51,21 @@ export class Component {
     this.namedServiceService.logStatus('hote');
   }
 }
-
 ```
 remember to import the Service with 
 ```typescript
 import { NamedServiceService } from '../named-service.service';
 ```
+and it into the decorator
+
+ ```typescript
+@...({
+  providers: [NamedServiceService]
+})
+```
+and inject it into the constructor.
+```typescript
+  constructor(private namedServiceService: NamedServiceService){}
+```
+
 
