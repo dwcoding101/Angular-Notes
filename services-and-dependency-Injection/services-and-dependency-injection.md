@@ -32,7 +32,7 @@ export class NamedServiceService {
 
  ## Using a service
 
- To use the service you need to inject it into the code where you wish to use it. this is done though the constructor and the use of the provider in the Class decorator. like so.
+ To use the service you need to inject it into the code where you wish to use it. This is done though the constructor and the use of the provider in the Class decorator. like so.
 
  ```typescript
  import { Component } from '@angular/core';
