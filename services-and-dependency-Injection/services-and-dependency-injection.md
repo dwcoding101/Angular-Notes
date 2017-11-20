@@ -53,4 +53,8 @@ export class Component {
 }
 
 ```
+remember to import the Service with 
+```typescript
+import { NamedServiceService } from '../named-service.service';
+```
 
