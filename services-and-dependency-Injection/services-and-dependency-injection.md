@@ -70,4 +70,23 @@ and inject it into the classes constructor.
   constructor(private namedServiceService: NamedServiceService){}
 ```
 
+## Injecting a service into a service.
 
+You can even inject a service into service, this is done by using a injectable decorator on the service that you are should you inject into. like so
+
+```typescript
+import { Injectable} from '@angular/core'
+
+@Injectable()
+export class NamedServiceService {
+    
+    status: boolean = ture;
+
+    constructor( private newService: NewService) {}
+
+    logStatus(note: string) {
+        console.log('This is a note : ' + note + ' with the status of: ' + this.status);
+    }
+}
+```
+also remember to at the new Service to the app.module.ts  @ngModule({provider})
