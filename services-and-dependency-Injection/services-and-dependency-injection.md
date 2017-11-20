@@ -30,7 +30,7 @@ export class NamedServiceService {
 ```
  and there you have it a simple service.
 
- ## Using a service
+ ## Using a service and Hyarchical Injection
 
  To use the service you need to inject it into the code where you wish to use it. This is done though the constructor and the use of the provider in the Class decorator. like so.
 
@@ -63,10 +63,7 @@ and it into the decorator
   providers: [NamedServiceService]
 })
 ```
-## Hyarchical Injector
-Every time that a provider class appears in the decorator a new instance of the serves is created.
-Once the new service has ben created it a be accessed by child decents of the component. So depending on 
-whether you need one or many instance of the same service converns the placement of the provider call. 
+ Everytime that you provider class appears in the decorator you create an instances the service. Once the new service has been created it can be accessed by injecting into the component. Depending on whether that you need one or many instances of the same service. So if you require one service place it at the top of the hierarchical structure of the dom. If you require many then place it within the provider of each decorator.  The constructor injector will firstly look within it current compoents  providers and then look in its parent providers and so on up the hierarchy. This is known as a hierarchical injection.
 
 and inject it into the classes constructor.
 ```typescript
