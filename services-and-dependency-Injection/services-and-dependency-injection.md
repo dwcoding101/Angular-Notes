@@ -12,4 +12,19 @@ export class NamedServiceService {
 
 }
 ```
-notice the matching camelcase the the name to filename.
+notice the matching camelcase the the class name to filename.
+
+the Service should have functions / properties  that can be used by users of the service.
+
+adding in some simple functions and data for the example
+
+```typescript
+export class NamedServiceService {
+    
+    status: boolean = ture;
+
+    logStatus(note: string) {
+        console.log('This is a note : ' + note + ' with the status of: ' + this.status);
+    }
+}
+```
