@@ -12,9 +12,14 @@ and then within your component class inject the Router
 ```typescript
 ...
 constructor(private router: Router){}
-
+...
 onNavigate() {
   this.router.navigate(['navigate','to','me']);
 }
 ```
 this will produce the absolute path `/navigate/to/me
+
+remember to import the Router
+```typescript
+import { Router } from '@angular/router'
+```
