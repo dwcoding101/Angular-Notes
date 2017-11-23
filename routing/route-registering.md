@@ -48,7 +48,7 @@ Use the `routerLink` directive to navigate like so
 ## Relative and absoulute
 relative to is without a `/` which basicly adds the routerLink path onto the current path. 
 
-## Style Active Router Links
+## Styling Active Router Links
 
 use the directive `routerLinkActive` to add a css class to the current active router path.
 
