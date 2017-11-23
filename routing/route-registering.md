@@ -4,7 +4,9 @@ for simple routes you can register them directly in the `app.module.ts`, this ca
 creating a `const` variable containing the routing infomation.
 
 ```typescript
-const appRoutes: Routes
+const appRoutes: Routes = [
+    { path: 'pathforRoute' : component: ComponentName }
+];
 ```
 
 remember to add the imports of Routes like so
