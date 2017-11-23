@@ -64,3 +64,4 @@ use  `routerLinkActiveOptions` to tailor the routerLinkActive directive
    routerLinkActive="{exact: true}">Link me to </a>
 ```
 this tells the `routerLinkActive` to only use the exact path.
+
