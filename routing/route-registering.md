@@ -37,3 +37,10 @@ used the directive in your html code to inform the router where to plave the rou
 <router-outlet></router-outlet>
 ```
 this will output the component specifed in the appRoutes varaible the app.
+
+## Navigating with Router Links
+Use the `routerLink` directive to navigate like so 
+
+```html
+<a routerLink="/path">Link me to </a>
+```
