@@ -44,3 +44,23 @@ Use the `routerLink` directive to navigate like so
 ```html
 <a routerLink="/path">Link me to </a>
 ```
+
+## Relative and absoulute
+relative to is without a `/` which basicly adds the routerLink path onto the current path. 
+
+## Style Active Router Links
+
+use the directive `routerLinkActive` to add a css class to the current active router path.
+
+```html
+<a routerLinkActive="activeClass">Link me to </a>
+```
+
+
+it anaylsis the current  loaded path and then checks which links lead to a route that uses this path. 
+use  `routerLinkActiveOptions` to tailor the routerLinkActive directive
+```html
+<a routerLinkActive="activeClass"
+   routerLinkActive="{exact: true}">Link me to </a>
+```
+this tells the `routerLinkActive` to only use the exact path.
