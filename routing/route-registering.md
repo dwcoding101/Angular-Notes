@@ -36,3 +36,4 @@ used the directive in your html code to inform the router where to plave the rou
 ```html
 <router-outlet></router-outlet>
 ```
+this will output the component specifed in the appRoutes varaible the app.
