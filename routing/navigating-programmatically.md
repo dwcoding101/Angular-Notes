@@ -89,3 +89,16 @@ remember to import the Router
 ```typescript
 import { ActivatedRoute, Params } from '@angular/router'
 ```
+
+## preserving query parameters and fragments
+
+```typescript
+
+constructor(private router: Router,
+            private route: ActivatedRoute){}
+...
+
+onEdit() {
+    this.router.navigate(['edit'],{relativeTo: this.route, queryParamsHandling: 'preserve'})
+}
+```

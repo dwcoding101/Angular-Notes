@@ -76,7 +76,7 @@ this tells the `routerLinkActive` to only use the exact path.
 const appRoutes: Routes = [
     { path: '' : component: HomeComponent },
     { path: 'users' : component: UsersComponent, children: [
-        {path:'' , component: UserComponent}
+        {path:':id/:name' , component: UserComponent}
     ] },
     { path: 'servers' : component: ServersComponent, children: [
         {path:':id' , component: ServerComponent},
@@ -85,3 +85,21 @@ const appRoutes: Routes = [
 ];
 ```
 with in `ServersComponent` there should be a `<router-outlet>` directive to indicate where the child path should be 
+
+## Redirecting whildcards (404 error) 
+
+```typescript
+const appRoutes: Routes = [
+    { path: '' : component: HomeComponent },
+    { path: 'users' : component: UsersComponent, children: [
+        {path:':id/:name' , component: UserComponent}
+    ] },
+    { path: 'servers' : component: ServersComponent, children: [
+        {path:':id' , component: ServerComponent},
+        {path:':id/edit' , component: EditServerComponent}
+    ] },
+    { path: 'not-found' : component: PageNotFoundComponent },
+    { path: '**' : redirectTo: '/not-found' },
+];
+```
+make sure that the ** path is the last route in the list;
