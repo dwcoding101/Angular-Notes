@@ -40,3 +40,45 @@ remember to import the Router
 ```typescript
 import { ActivatedRoute } from '@angular/router'
 ```
+
+## programmatically adding queryParams and fragments 
+
+```typescript
+...
+constructor(private router: Router){}
+...
+onNavigate(id: number) {
+  this.router.navigate(['navigate','to','me',id],{queryParams: {allowEdit:'1'},fragment: 'loading'});
+}
+```
+if you pass 5 to the function this will produce the absolute path `/navigate/to/me/5?allow=1#loading`
+
+remember to import the Router
+```typescript
+import { Router } from '@angular/router'
+```
+## Retrieving Querry Parameters and Fragments
+
+```typescript
+...
+constructor(private router: Router,
+            private route: ActivatedRoute){}
+...
+ngOnInit() {
+  console.log( this.route.snapshot.queryParams['paraName'])
+  console.log( this.route.snapshot.fragment);
+  
+  //reactive way if theres any chance of the queryParams changing while in the component
+  this.route.queryParams.subscribe(
+      (params:Params)=>{
+          console.log('the parameters have changed to' + params['paraName'])
+      }
+  )
+  
+  this.router.navigate(['navigate','to','me'],{relativeTo: this.route});
+}
+```
+remember to import the Router
+```typescript
+import { ActivatedRoute, Params } from '@angular/router'
+```

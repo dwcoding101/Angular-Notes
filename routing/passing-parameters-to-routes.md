@@ -53,6 +53,10 @@ import { ActivatedRoute } from '@angular/router'
 ## Passing QueryParameters and Fragments using Directives
 ```html
 <a [routerLink]="['/path',3,'edit]"
-   [queryParams]="{allowEdit: 1}">Link me to </a>
+   [queryParams]="{allowEdit: 1}"
+   [fragment]="'loading'">Link me to </a>
 ```
-querry Params is another attribute of the `routerLink` directive of used to pass java objects to router link. the java aobject is then passed as query parameters `/path/3/edit?allowEdit=1`
+querry Params is another attribute of the `routerLink` directive of used to pass java objects to router link. the java aobject is then passed as query parameters `/path/3/edit?allowEdit=1#`
+
+
+```
