@@ -74,6 +74,13 @@ ngOnInit() {
           console.log('the parameters have changed to' + params['paraName'])
       }
   )
+
+  // and for fragment changes
+  this.route.fragment.subscribe(
+      (fragment: string)=>{
+          console.log('the fragment has changed to' + fragment);
+      }
+  )
   
   this.router.navigate(['navigate','to','me'],{relativeTo: this.route});
 }
