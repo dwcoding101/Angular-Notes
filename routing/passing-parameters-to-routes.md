@@ -43,7 +43,16 @@ returns a string.
 
 also the subscribe part is used to update the id if the id chages at some point in the future
 
+also when angular destorys the component it will also destory the subscribe inline function.
+
 remember to import the ActivatedRouter
 ```typescript
 import { ActivatedRoute } from '@angular/router'
 ```
+
+## Passing QueryParameters and Fragments using Directives
+```html
+<a [routerLink]="['/path',3,'edit]"
+   [queryParams]="{allowEdit: 1}">Link me to </a>
+```
+querry Params is another attribute of the `routerLink` directive of used to pass java objects to router link. the java aobject is then passed as query parameters `/path/3/edit?allowEdit=1`

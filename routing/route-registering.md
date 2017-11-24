@@ -38,11 +38,16 @@ used the directive in your html code to inform the router where to plave the rou
 ```
 this will output the component specifed in the appRoutes varaible the app.
 
-## Navigating with Router Links
+## Navigating with Router Links Directive
 Use the `routerLink` directive to navigate like so 
 
 ```html
 <a routerLink="/path">Link me to </a>
+```
+you can also use
+
+```html
+<a [routerLink]="['/path',3,'edit]">Link me to </a>
 ```
 
 ## Relative and absoulute
