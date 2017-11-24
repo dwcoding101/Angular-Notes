@@ -6,3 +6,5 @@ route registering [here](route-registering.md)
 navigating programmatically [here](navigating-programmatically.md)
 
 creating a routing module [here](creating-a-routing-module.md)
+
+routing guards [here](routing-guards.md)
