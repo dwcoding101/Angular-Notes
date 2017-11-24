@@ -70,3 +70,18 @@ use  `routerLinkActiveOptions` to tailor the routerLinkActive directive
 ```
 this tells the `routerLinkActive` to only use the exact path.
 
+## Nested Routing
+
+```typescript
+const appRoutes: Routes = [
+    { path: '' : component: HomeComponent },
+    { path: 'users' : component: UsersComponent, children: [
+        {path:'' , component: UserComponent}
+    ] },
+    { path: 'servers' : component: ServersComponent, children: [
+        {path:':id' , component: ServerComponent},
+        {path:':id/edit' , component: EditServerComponent}
+    ] }
+];
+```
+with in `ServersComponent` there should be a `<router-outlet>` directive to indicate where the child path should be 
