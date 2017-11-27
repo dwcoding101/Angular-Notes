@@ -184,3 +184,28 @@ this is how you handle radio buttons
     </label>
 </div>
 ```
+## Setting and Patching Form Values
+there are to method that you can use to programmatically change form data 
+
+```typescript
+suggestUserName() {
+    const suggestedName = 'Superuser';
+     this.signUpForm.setValue({
+       userData: {
+         username: suggestedName,
+         email: ''
+       },
+       secret: 'pet',
+       questionAnswer: 'Squeak',
+       gender: 'male'
+    })
+    this.signUpForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    });
+  }
+```
+the `setValue` method need a exact representation of the from data, once its run all data in the form is changed.
+
+the `patchValue` method you only represent the form data that you want to change.
