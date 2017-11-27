@@ -118,7 +118,7 @@ attach a local reference to the input element with `# ="ngModel` so you can refe
 </div>
 ```
 
-and within tour component code 
+and within our component code 
 
 ```typescript
  defaultQuestion: string  = 'pet';
@@ -134,7 +134,7 @@ and within tour component code
 <p>Your reply: {{ answer }}</p>
  ```
 
- and within tour component code 
+ and within our component code 
 
 ```typescript
  answer: string  = '';
