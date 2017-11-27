@@ -209,3 +209,42 @@ suggestUserName() {
 the `setValue` method need a exact representation of the from data, once its run all data in the form is changed.
 
 the `patchValue` method you only represent the form data that you want to change.
+
+## Using form data
+
+```html
+  <div class="row" *ngIf="submitted" >
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>Username: {{ user.username }}</p>
+      <p>Mail: {{ user.email }} </p>
+      <p>Secret Question: Your first{{ user.secretQuestion }}</p>
+      <p>Answer: {{ user.answer }}</p>
+      <p>Gender: {{ user.gender }}</p>
+    </div>
+  </div>
+```
+
+```typescript
+  user = {
+    username: '',
+    email: '',
+    secretQuestion: '',
+    answer: '',
+    gender: ''
+  }
+  submitted: boolean = false
+    ...
+    ...
+    
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.signUpForm);
+    this.user.username = this.signUpForm.value.userData.username;
+    this.user.email = this.signUpForm.value.userData.email;
+    this.user.secretQuestion = this.signUpForm.value.secret;
+    this.user.answer = this.signUpForm.value.questionAnswer;
+    this.user.gender = this.signUpForm.value.gender;
+
+  }
+```
