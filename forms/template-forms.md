@@ -166,3 +166,21 @@ you can use `ngModelGroup` in to group the controls together for better organisa
  ```
 
  note that the grouped part can also be referenced for validity.
+
+ ## Handling Radio Buttons
+
+this is how you handle radio buttons
+
+ ```html
+         <div class="radio" *ngFor="let gender of genders" >
+    <label>
+        <input 
+            type="radio"
+            name="gender"
+            [ngModel]="male"
+            [value]="gender"
+            required>
+            {{ gender }}
+    </label>
+</div>
+```
