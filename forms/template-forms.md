@@ -140,3 +140,29 @@ and within our component code
  answer: string  = '';
 ```
  this this will update while the data is change in the textarea input and vica verca.
+
+ ## Grouping Form Controls
+you can use `ngModelGroup` in to group the controls together for better organisation.  this is done like so.
+
+ ```html
+
+<div 
+    id="user-data" 
+    ngModelGroup="userData"
+    #userData="ngModelGroup">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" ngModel name="username" required>
+    </div>
+    <button class="btn btn-default" type="button">Suggest an Username</button>
+    <div class="form-group">
+        <label for="email">Mail</label>
+        <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+    </div>
+</div>
+<p *ngIf="!userData.valid && userData.touched" >User Data is invald!</p>
+
+ ```
+
+ note that the grouped part can also be referenced for validity.
