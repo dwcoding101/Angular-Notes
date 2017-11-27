@@ -85,3 +85,19 @@ input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 ```
+## Outputting Validation Error Messages
+
+attach a local reference to the input element with `# ="ngModel` so you can reference it from within the html.
+
+```html
+ <input 
+    type="email" 
+    id="email" 
+    class="form-control"
+    ngModel
+    name="email"
+    required
+    email
+    #email="ngModel">
+    <span class="help-block" *ngIf="!email.valid && email.touched" >Please enter a valid email!</span>
+```
