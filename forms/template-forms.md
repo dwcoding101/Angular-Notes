@@ -124,3 +124,19 @@ and within tour component code
  defaultQuestion: string  = 'pet';
 ```
  this should select the pet value option of the select element.
+
+ ## NgModel two way data binding
+
+ ```html
+ <div class="form-group">
+    <textarea class="form-control" name="questionAnswer" rows="3" [(ngModel)]="answer"></textarea>
+</div>
+<p>Your reply: {{ answer }}</p>
+ ```
+
+ and within tour component code 
+
+```typescript
+ answer: string  = '';
+```
+ this this will update while the data is change in the textarea input and vica verca.
