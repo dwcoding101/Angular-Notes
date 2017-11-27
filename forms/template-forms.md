@@ -55,4 +55,21 @@ remember to import `NgForm` with
 ```typescript
 import { NgForm } from '@angular/forms';
 ```
+you can also gain access to the form with a `@ViewChild` decorator. Like so
+
+
+
+```typescript
+@ViewChild('f') form:NgForm;
+
+onSubmit(form: NgForm) {
+    console.log(form);
+}
+
+```
+
+remember to import `ViewChild` with
+```typescript
+import { ViewChild } from '@angular/forms';
+```
 
