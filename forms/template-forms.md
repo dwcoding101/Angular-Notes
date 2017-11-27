@@ -210,7 +210,7 @@ the `setValue` method need a exact representation of the from data, once its run
 
 the `patchValue` method you only represent the form data that you want to change.
 
-## Using form data
+## Using form data and resetting the form
 
 ```html
   <div class="row" *ngIf="submitted" >
@@ -236,7 +236,7 @@ the `patchValue` method you only represent the form data that you want to change
   submitted: boolean = false
     ...
     ...
-    
+
   onSubmit() {
     this.submitted = true;
     console.log(this.signUpForm);
@@ -246,5 +246,7 @@ the `patchValue` method you only represent the form data that you want to change
     this.user.answer = this.signUpForm.value.questionAnswer;
     this.user.gender = this.signUpForm.value.gender;
 
+    this.signUpForm.reset();
   }
 ```
+you can also use `reset()` like the `setValue()` and pass the reset function a object of the values you want the form to be resetted to.
