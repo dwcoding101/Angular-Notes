@@ -73,3 +73,6 @@ remember to import `ViewChild` with
 import { ViewChild } from '@angular/forms';
 ```
 
+## Checking for Validty
+
+by adding `required` attribute to the html form input elements it forces the input element to be required by the form. If the input is empty then a `ng-invalid` class is added to the element. It also can be seen in the element object under valid key vale pair. 
