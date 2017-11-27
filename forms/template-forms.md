@@ -34,3 +34,11 @@ To use template driven forms you also need register the input controls. This is 
     >
 </div>
 ```
+
+## Hooking into the Submit Button
+the `ngSubmit` directive is used to listern to the submit button. So to run a function once the submit button is pushed event bind to the `ngSubmit` event
+
+```html
+<form (ngSubmit)="onSubmit()">
+</form>
+```
