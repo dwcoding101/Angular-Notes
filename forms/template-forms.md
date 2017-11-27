@@ -101,3 +101,26 @@ attach a local reference to the input element with `# ="ngModel` so you can refe
     #email="ngModel">
     <span class="help-block" *ngIf="!email.valid && email.touched" >Please enter a valid email!</span>
 ```
+
+## NgModel Property binding to set default values 
+```html
+<div class="form-group">
+    <label for="secret">Secret Questions</label>
+    <select 
+    id="secret" 
+    class="form-control"
+    [ngModel]="defaultQuestion"
+    name="secret"
+    >
+        <option value="pet">Your first Pet?</option>
+        <option value="teacher">Your first teacher?</option>
+    </select>
+</div>
+```
+
+and within tour component code 
+
+```typescript
+ defaultQuestion: string  = 'pet';
+```
+ this should select the pet value option of the select element.
