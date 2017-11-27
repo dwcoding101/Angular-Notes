@@ -76,3 +76,12 @@ import { ViewChild } from '@angular/forms';
 ## Checking for Validty
 
 by adding `required` attribute to the html form input elements it forces the input element to be required by the form. If the input is empty then a `ng-invalid` class is added to the element. It also can be seen in the element object under the valid key: value pair. 
+
+## using CSS classes to style an invalid form
+because angular adds class to the inputs elements you can tie into then to style the page
+
+```css
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+```
