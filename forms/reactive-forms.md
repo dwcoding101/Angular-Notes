@@ -90,3 +90,37 @@ property bind with `formControlName="username"`
     </div>
   </div>
 </div>
+
+## Submitting the form
+Use event binding to reaction to form submitions `(ngSubmit)="onSubmit()"` and uses the formGroup variable
+to interact with the data.
+
+```typescript
+  onSubmit(){
+    console.log(this.signupForm);
+  }
+  
+```
+## Adding Validation 
+To add control validation add `Validators` as the second parameter of the `FormControl` class.
+
+```typescript
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  genders = ['male', 'female'];
+  signupForm: FormGroup;
+
+  ngOnInit() {
+    this.signupForm = new FormGroup({
+      'username': new FormControl(null, Validators.required),
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'gender': new FormControl('male')
+    });
+  }
+```  
