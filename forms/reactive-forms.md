@@ -60,7 +60,7 @@ property bind with `formControlName="username"`
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form [formGroup]="signupForm">
+      <form [formGroup]="signupForm" 
         <div class="form-group">
           <label for="username">Username</label>
           <input
