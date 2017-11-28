@@ -124,3 +124,10 @@ export class AppComponent implements OnInit {
     });
   }
 ```  
+
+## Getting access to the controls
+use the `FormGroup` variable and `getValue()` to access the `FromControls`
+```html
+<span class="help-block" *ngIf="!signupForm.valid && signupForm.touched">Please enter a valid data</span>
+<span class="help-block" *ngIf="!signupForm.getValue('email').valid && signupForm.getValue('email').touched">Please enter a email data</span>
+```
