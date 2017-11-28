@@ -131,3 +131,35 @@ use the `FormGroup` variable and `getValue()` to access the `FromControls`
 <span class="help-block" *ngIf="!signupForm.valid && signupForm.touched">Please enter a valid data</span>
 <span class="help-block" *ngIf="!signupForm.getValue('email').valid && signupForm.getValue('email').touched">Please enter a email data</span>
 ```
+
+## Grouping controls
+
+Staring with the froms code add another layer of `FormGroup`
+
+```typescript
+  ngOnInit() {
+    this.signupForm = new FormGroup({
+      'userData': new FormGroup({
+        'username': new FormControl(null, Validators.required),
+        'email': new FormControl(null, [Validators.required, Validators.email]),  
+      }),
+      'gender': new FormControl('male')
+    });
+  }
+```
+then with the forms html add `formGroupName` to a `<div>` that encapsulates the form controls
+
+```html
+<div formGroupName="userData">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" formControlName="username" class="form-control">
+    <span class="help-block" *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched">Please enter a valid username!</span>
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input type="text" id="email" formControlName="email" class="form-control">
+    <span class="help-block" *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched">Please enter a valid email!</span>
+  </div>
+</div>
+```
