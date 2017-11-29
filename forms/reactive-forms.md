@@ -163,3 +163,33 @@ then with the forms html add `formGroupName` to a `<div>` that encapsulates the 
   </div>
 </div>
 ```
+
+## Array of Form Controls (FormArray)
+
+```html
+<div formArrayName="hobbies">
+  <h4>your hobbies</h4>
+  <button class="btn btn-default" type="button" (click)="onAddHobby()">Add Hobby</button>
+  <div *ngFor="let hobbyControls of signupForm.get('hobbies').controls; let i = index" class="form-group">
+    <input type="text" class="form-control" [formControlName]="i">
+  </div>
+</div>
+```        
+
+```typescript
+  ngOnInit() {
+    this.signupForm = new FormGroup({
+      'userData': new FormGroup({
+        'username': new FormControl(null, Validators.required),
+        'email': new FormControl(null, [Validators.required, Validators.email]),  
+      }),
+      'gender': new FormControl('male'),
+      'hobbies': new FormArray([])
+    });
+  }
+
+  onAddHobby(){
+    const control = new FormControl(null,Validators.required);
+    (<FormArray>this.signupForm.get('hobbies')).push(control);
+  }
+```
