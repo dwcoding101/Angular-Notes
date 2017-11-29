@@ -218,3 +218,12 @@ then with the forms html add `formGroupName` to a `<div>` that encapsulates the 
     return null;
   }
 ```
+
+## Using Error Codes
+
+```html
+<span>
+  <span *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']">This Name is Invalid</span>
+  <span *ngIf="signupForm.get('userData.username').errors['required']">This field is required</span>
+</span>
+```
