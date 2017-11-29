@@ -227,3 +227,46 @@ then with the forms html add `formGroupName` to a `<div>` that encapsulates the 
   <span *ngIf="signupForm.get('userData.username').errors['required']">This field is required</span>
 </span>
 ```
+
+## Custom Async Validators
+
+```typescript
+  ngOnInit() {
+    this.signupForm = new FormGroup({
+      'userData': new FormGroup({
+        'username': new FormControl(null, [Validators.required, this.forbiddenNames.bind(this) ]),
+        'email': new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails),  
+      }),
+      'gender': new FormControl('male'),
+      'hobbies': new FormArray([])
+    });
+  }
+  ...
+  forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
+    const promise = new Promise<any>((resolve, reject) => {
+      setTimeout(()=>{
+        if (control.value === 'test@test.com') {
+          resolve({'emailIsForbidden': true}); // error pass the error back.
+        } else {
+          resolve(null); // no errors
+        }
+      },1500);
+    });
+    return promise;
+  }
+```
+
+## Reacting to Status or Values Changes
+```typescript
+this.signupForm.valueChanges.subscribe(
+  (value) => {
+    console.log(value);
+  }
+);
+
+this.signupForm.statusChanges.subscribe(
+  (status) => {
+    console.log(status);
+  }
+);
+```
