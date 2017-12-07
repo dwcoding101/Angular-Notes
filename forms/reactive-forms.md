@@ -270,3 +270,7 @@ this.signupForm.statusChanges.subscribe(
   }
 );
 ```
+
+## Update the form
+
+you can use the `reset()` , `setValue({})` and `patchValue({})` as in the template driven approach?
